@@ -9,7 +9,7 @@ class Subscriber:
     def __del__(self):
         self.connection.close()
     def _create_connection(self):
-        credentials = pika.PlainCredentials('guest', 'Pewdiepie1')
+        credentials = pika.PlainCredentials('guest', 'guest')
         parameters=pika.ConnectionParameters('localhost', credentials=credentials, heartbeat=5)
         return pika.BlockingConnection(parameters)
     def on_message_callback(self, channel, method, properties, body):
